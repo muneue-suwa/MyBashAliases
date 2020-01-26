@@ -67,3 +67,6 @@ function pdf2jpeg(){
     pdftoppm -jpeg -r 600 $FILENAME $WITHOUT_FILE_EXTENSION;
 }
 alias pdf2jpeg=pdf2jpeg
+
+# Zip & UnZip
+alias unxz="tar Jxfv"
