@@ -70,6 +70,7 @@ alias pdf2jpeg=pdf2jpeg
 
 # Zip & UnZip
 alias unxz="tar Jxfv"
+alias ungz="tar -zxvf"
 
 # Search Cross
 function search_cross(){
