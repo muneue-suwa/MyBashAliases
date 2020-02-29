@@ -53,5 +53,9 @@ alias cpb=cpb
 alias えぃｔ='exit'
 # alias node="~/Applications/node-v10.16.3-linux-x64/bin/node"
 export PATH="$PATH:$HOME/Applications/node-v10.16.3-linux-x64/bin/"
+function search_cross(){
+	find ./ -type f -print | xargs grep "$@"
+}
+alias search-cross='search_cross'
 ## MY ALIAS END ##
 ##################
