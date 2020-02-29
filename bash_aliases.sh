@@ -70,3 +70,11 @@ alias pdf2jpeg=pdf2jpeg
 
 # Zip & UnZip
 alias unxz="tar Jxfv"
+
+# Search Cross
+function search_cross(){
+	find ./ -type f -print | xargs grep "$@"
+}
+alias search-cross=search_cross
+## MY ALIAS END ##
+##################
