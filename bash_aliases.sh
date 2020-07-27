@@ -77,5 +77,8 @@ function search_cross(){
 	find ./ -type f -print | xargs grep "$@"
 }
 alias search-cross=search_cross
+
+# Visual Studio Code Insider
+alias c='code-insiders .'
 ## MY ALIAS END ##
 ##################
