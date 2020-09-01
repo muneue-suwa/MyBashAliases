@@ -10,6 +10,7 @@ function gcc2(){
 	gcc -o $CFILE.out -lm -ansi -pedantic -Wall $FILENAME;
 }
 alias gcc2=gcc2
+alias gnome-open='gio open $1'
 
 # Scanning IP Address 
 alias shareip="sudo arp-scan -I enp0s25 -l"
