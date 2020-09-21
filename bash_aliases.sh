@@ -35,10 +35,6 @@ alias cpb=cpb
 # My Applications
 alias check-sha256='python3 ~/Applications/sha-2-verifier/sha-2-verifier.py'
 
-# Add PATH
-export PATH="$PATH:$HOME/Applications/node-v10.16.3-linux-x64/bin/"
-PATH=$HOME/.nodebrew/current/bin:$PATH
-
 # Simple Renamed Commands
 alias えぃｔ='exit'
 
