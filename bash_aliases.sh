@@ -16,7 +16,7 @@ alias shareip="sudo arp-scan -I enp0s25 -l"
 alias vmshareip='sudo arp-scan -I vmnet8 -l && sudo arp-scan -I vmnet1 -l'
 
 # APT
-alias update="sudo apt update && sudo apt upgrade -y && sudo snap refresh"
+alias update="sudo apt update && sudo apt upgrade -y"
 alias apt-clean="sudo apt autoremove -y && sudo apt autoclean && sudo apt clean"
 
 # SSH
