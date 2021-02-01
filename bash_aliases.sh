@@ -69,6 +69,14 @@ function pdf2jpeg(){
 }
 alias pdf2jpeg=pdf2jpeg
 
+function pdfcrops(){
+    for filename in $@
+    do
+        pdfcrop $filename
+    done
+}
+alias pdfcrops=pdfcrops
+
 # Zip & UnZip
 alias unxz="tar Jxfv"
 alias ungz="tar -zxvf"
