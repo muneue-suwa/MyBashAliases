@@ -84,6 +84,14 @@ function pdfcrops(){
 }
 alias pdfcrops=pdfcrops
 
+function pdfcrop2png(){
+    FILENAME=$(basename $1);
+    pdfcrop $FILENAME
+    WITHOUT_FILE_EXTENSION=$(basename $1 .pdf);
+    pdftoppm -png -r 600 $WITHOUT_FILE_EXTENSION-crop.pdf $WITHOUT_FILE_EXTENSION;
+}
+alias pdfcrop2png=pdfcrop2png
+
 # Zip & UnZip
 alias unxz="tar Jxfv"
 alias ungz="tar -zxvf"
