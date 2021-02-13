@@ -89,5 +89,26 @@ alias search-cross=search_cross
 
 # Visual Studio Code Insider
 alias c='code-insiders .'
+
+# Create backup
+function create_backup(){
+    FILENAME=${1}
+    FILE=${FILENAME%.*}
+    EXTENSION=${FILENAME##*.}
+    DATE="$(date +\%Y\%m\%d_\%H\%M\%S)"
+    
+    echo "旧ファイル名: ${FILENAME}"
+    
+    # 拡張子無しファイルの対応
+    if [ "${FILE}" == "${EXTENSION}" ];then
+        NEW_FILENAME=${FILE}_${DATE}
+        EXTENSION=""
+    else
+        NEW_FILENAME=${FILE}_${DATE}.${EXTENSION}
+    fi
+    
+    cp $FILENAME $NEW_FILENAME
+}
+alias create-backup=create_backup
 ## MY ALIAS END ##
 ##################
