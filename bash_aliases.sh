@@ -12,7 +12,7 @@ function gcc2(){
 alias gcc2=gcc2
 alias gnome-open='gio open $1'
 
-# Scanning IP Address 
+# Scanning IP Address
 alias shareip="sudo arp-scan -I enp0s25 -l"
 alias vmshareip='sudo arp-scan -I vmnet8 -l && sudo arp-scan -I vmnet1 -l'
 
@@ -91,6 +91,16 @@ function pdfcrop2png(){
     pdftoppm -png -r 600 $WITHOUT_FILE_EXTENSION-crop.pdf $WITHOUT_FILE_EXTENSION;
 }
 alias pdfcrop2png=pdfcrop2png
+
+function pdftotexts(){
+    for filename in $@
+    do
+        FILENAME=$(basename $filename);
+        WITHOUT_FILE_EXTENSION=$(basename $filename .pdf);
+        pdftotext $FILENAME $WITHOUT_FILE_EXTENSION.txt
+    done
+}
+alias pdftotexts=pdftotexts
 
 # Zip & UnZip
 alias unxz="tar Jxfv"
