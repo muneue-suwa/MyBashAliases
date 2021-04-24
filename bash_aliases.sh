@@ -113,5 +113,9 @@ alias search-cross=search_cross
 
 # Visual Studio Code Insider
 alias c='code-insiders .'
+
+# WSL
+alias chrome.exe='/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe'
+
 ## MY ALIAS END ##
 ##################
