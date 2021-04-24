@@ -12,7 +12,7 @@ function gcc2(){
 alias gcc2=gcc2
 alias gnome-open='gio open $1'
 
-# Scanning IP Address 
+# Scanning IP Address
 alias shareip="sudo arp-scan -I enp0s25 -l"
 alias vmshareip='sudo arp-scan -I vmnet8 -l && sudo arp-scan -I vmnet1 -l'
 
@@ -64,6 +64,42 @@ function pdf2jpeg(){
     pdftoppm -jpeg -r 600 $FILENAME $WITHOUT_FILE_EXTENSION;
 }
 alias pdf2jpeg=pdf2jpeg
+
+function pdf2png(){
+    FILENAME=$(basename $1);
+    WITHOUT_FILE_EXTENSION=$(basename $1 .pdf);
+    DST_DIRNAME=$WITHOUT_FILE_EXTENSION.png.d/
+    pdftoppm -png -r 600 $FILENAME $WITHOUT_FILE_EXTENSION;
+    mkdir $DST_DIRNAME/
+    mv $WITHOUT_FILE_EXTENSION*.png $DST_DIRNAME/
+}
+alias pdf2png=pdf2png
+
+function pdfcrops(){
+    for filename in $@
+    do
+        pdfcrop $filename
+    done
+}
+alias pdfcrops=pdfcrops
+
+function pdfcrop2png(){
+    FILENAME=$(basename $1);
+    pdfcrop $FILENAME
+    WITHOUT_FILE_EXTENSION=$(basename $1 .pdf);
+    pdftoppm -png -r 600 $WITHOUT_FILE_EXTENSION-crop.pdf $WITHOUT_FILE_EXTENSION;
+}
+alias pdfcrop2png=pdfcrop2png
+
+function pdftotexts(){
+    for filename in $@
+    do
+        FILENAME=$(basename $filename);
+        WITHOUT_FILE_EXTENSION=$(basename $filename .pdf);
+        pdftotext $FILENAME $WITHOUT_FILE_EXTENSION.txt
+    done
+}
+alias pdftotexts=pdftotexts
 
 # Zip & UnZip
 alias unxz="tar Jxfv"
