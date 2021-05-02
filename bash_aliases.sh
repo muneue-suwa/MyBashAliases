@@ -46,8 +46,6 @@ alias えぃｔ='exit'
 alias bash-update='source $HOME/.bashrc'
 
 # PDF Files
-alias pdf2txt='$HOME/.local/bin/pdf2txt.py'
-
 function pdftk_down(){
     for filename in $@
     do
