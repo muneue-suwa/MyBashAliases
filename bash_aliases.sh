@@ -73,6 +73,16 @@ function pdf2png(){
 }
 alias pdf2png=pdf2png
 
+function pdf2pngs(){
+    for filename in $@
+    do
+        FILENAME=$(basename $filename);
+        WITHOUT_FILE_EXTENSION=$(basename $filename .pdf);
+        pdftoppm -png -r 600 $FILENAME $WITHOUT_FILE_EXTENSION;
+    done
+}
+alias pdf2pngs=pdf2pngs
+
 function pdfcrops(){
     for filename in $@
     do
