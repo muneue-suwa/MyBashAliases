@@ -123,7 +123,17 @@ alias search-cross=search_cross
 alias c='code-insiders .'
 
 # WSL
-alias chrome.exe='/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe'
+# alias chrome.exe='/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe $(wslpath -w $1)'
+alias chrome=open_chrome
+function open_chrome(){
+    CHROME_PATH='/mnt/c/Program Files/Google/Chrome/Application/chrome.exe'
+    for filename in $@
+    do
+        TARGET_FILENAME=$(wslpath -m $filename)
+        echo $CHROME_PATH
+        "$CHROME_PATH" $TARGET_FILENAME
+    done
+}
 
 # Create backup
 function create_backup(){
