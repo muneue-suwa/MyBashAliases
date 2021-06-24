@@ -135,6 +135,12 @@ function open_chrome(){
     done
 }
 
+alias matlab-sd=open_matlab_dir
+function open_matlab_dir(){
+    TARGET_DIRNAME=$(wslpath -m $1)
+    matlab.exe -sd $TARGET_DIRNAME
+}
+
 # Create backup
 function create_backup(){
     FILENAME=${1}
