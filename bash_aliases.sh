@@ -68,7 +68,7 @@ function pdf2png(){
     WITHOUT_FILE_EXTENSION=$(basename $1 .pdf);
     DST_DIRNAME=$WITHOUT_FILE_EXTENSION.png.d/
     pdftoppm -png -r 600 $FILENAME $WITHOUT_FILE_EXTENSION;
-    mkdir $DST_DIRNAME/
+    mkdir -p $DST_DIRNAME/
     mv $WITHOUT_FILE_EXTENSION*.png $DST_DIRNAME/
 }
 alias pdf2png=pdf2png
