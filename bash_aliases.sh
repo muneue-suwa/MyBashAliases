@@ -11,6 +11,7 @@ function gcc2(){
 }
 alias gcc2=gcc2
 alias gnome-open='gio open $1'
+alias c="code ."
 
 # Scanning IP Address
 alias shareip="sudo arp-scan -I enp0s25 -l"
