@@ -123,6 +123,9 @@ alias search-cross=search_cross
 # Visual Studio Code Insider
 alias c='code-insiders .'
 
+# act
+alias act='~/Applications/act_Linux_x86_64/act'
+
 # WSL
 # alias chrome.exe='/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe $(wslpath -w $1)'
 alias chrome=open_chrome
