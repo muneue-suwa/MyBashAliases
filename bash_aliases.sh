@@ -67,8 +67,13 @@ alias pdf2jpeg=pdf2jpeg
 function pdf2png(){
     FILENAME=$(basename "$1");
     WITHOUT_FILE_EXTENSION=$(basename "$1" .pdf);
+    if [ -z "$2" ]; then
+        dpi=600;
+    else
+        dpi=$2;
+    fi
     DST_DIRNAME="$WITHOUT_FILE_EXTENSION".png.d/
-    pdftoppm -png -r 600 "$FILENAME" "$WITHOUT_FILE_EXTENSION";
+    pdftoppm -png -r $dpi "$FILENAME" "$WITHOUT_FILE_EXTENSION";
     mkdir -p "$DST_DIRNAME"/
     mv "$WITHOUT_FILE_EXTENSION"*.png "$DST_DIRNAME"/
 }
